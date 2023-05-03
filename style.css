@@ -1,0 +1,46 @@
+body{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 90vh;
+	background: #1c2a44;
+}
+.button{
+	position: relative;
+	cursor: pointer;
+	color: white;
+	background: black;
+	padding: 4px;
+	border-radius: 8px;
+	font-size: 21px;
+	overflow: hidden;
+	border: none;
+}
+.button::before{
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 200%;
+	height: 100%;
+	background: linear-gradient(125deg,
+		red,yellow,skyblue,limegreen,violet);
+	background-size: 50% 100%;
+
+}
+.button:hover::before{
+	animation: animate-border .65s infinite linear;
+}
+.button span{
+	position: relative;
+	z-index: 2;
+	display: block;
+	background: black;
+	padding: 13px 20px;
+	border-radius: 6px;
+}
+@keyframes animate-border{
+	to{
+		transform: translateX(-50%);
+	}
+}
